@@ -1,0 +1,6 @@
+# Digital Earth Africa - Public Data Changes
+
+## 2019-07-29
+
+- Added /Website
+- Updated index.html to improve user interface and experience.
