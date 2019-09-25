@@ -219,7 +219,8 @@ if (typeof AUTO_TITLE != 'undefined' && AUTO_TITLE == true) {
         Key: item.find('Key').text(),
             LastModified: item.find('LastModified').text(),
             Size: bytesToHumanReadable(item.find('Size').text()),
-            Type: 'file'
+            Type: 'file',
+            Bytes: item.find('Size').text()
       }
       // clang-format on
     });
@@ -304,7 +305,12 @@ if (typeof AUTO_TITLE != 'undefined' && AUTO_TITLE == true) {
           item.href = item.keyText;
         }
       } else {
-        item.href = BUCKET_WEBSITE_URL + '/' + encodeURIComponent(item.Key);
+        // CloudFront can't handle files bigger than 20 GB, so there's a special case needed
+        if (parseInt(item.Bytes) > 20000000000) {
+          item.href = BUCKET_URL + '/' + encodeURIComponent(item.Key);
+        } else {
+          item.href = BUCKET_WEBSITE_URL + '/' + encodeURIComponent(item.Key);
+        }
         item.href = item.href.replace(/%2F/g, '/');
         //Converts to local user time
         var options = {}
