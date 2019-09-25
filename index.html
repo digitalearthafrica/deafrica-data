@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Digital Earth Africa - Public Data (DEV)</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="website/css/normalize.css">
+	<link rel="stylesheet" href="website/css/skeleton.css">
+	<link rel="stylesheet" href="website/ga.css">
+	<style>
+			
+			
+	</style>
+
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link rel="icon" type="image/x-icon" href="website/images/dea-favicon.ico">
+	
+	<!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+		<div class="row">
+				<div class="twelve columns u-max-full-width">
+					<a href="http://www.ga.gov.au/">
+						<img src="website/images/geoscience_stacked.jpg" alt="GA and DEA Logo" height="100" />
+					</a>
+					<a href="http://www.ga.gov.au/dea">
+						<img src="website/images/dea_stacked.jpg" alt="GA and DEA Logo" height="100" />
+					</a>
+				</div>
+		</div>
+    <div class="row">
+			<div class="twelve columns" style="margin-top: 3em">
+				<h1>Digital Earth Africa - Public Data</h1>
+				<p>This repository holds the Public Data Set of <a href="http://digitalearthafrica.org">Digital Earth Africa</a>. <br/>
+					 To access these files with an AWS S3 client the name of the AWS bucket is <b>deafrica-data</b></p>
+      </div>
+		</div>
+<!-- s3-bucket-listing
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+		<div class="row">
+			<div class="twelve columns">
+				<div id="navigation"></div>
+				<div id="listing"></div>
+			</div>
+		</div>
+
+		<hr/>
+
+<!-- footer
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+		<div class="row">
+			<div class="twelve columns">
+				<h4>Disclaimer</h4>
+				<p>We reserve the right to make this bucket requester-pays. To ensure continuity of service please enable requester-pays flags in your client. <br/>
+				For more information see the <a href="/README.txt">README</a>.</p>
+				<h4>Changelog</h4>
+				<p>This bucket is updated with new data frequently, please consult the <a href="/CHANGELOG.txt">CHANGELOG</a> for a list of changes.</p>
+				<!-- obfuscated email to dodge spambots
+				–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+				<h4>Feedback</h4> 
+				<p>Please contact us with any feedback or questions <a href='mai&#108;to&#58;ea%7&#50;th%2E&#111;b&#115;&#101;rv%&#54;1&#116;i&#111;n&#64;&#103;a&#46;go&#118;&#46;%&#54;1u'>ea&#114;&#116;h&#46;&#111;bse&#114;&#118;&#97;tion&#64;ga&#46;&#103;&#111;v&#46;&#97;&#117;</a></p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="twelve columns">
+				<h4>Copyright</h4>
+				<p>All material on this website is licensed under the <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>, with the exception of:</p>
+				<ul>
+					<li>the Commonwealth Coat of Arms</li>
+					<li>this entity's logo</li>
+					<li>content supplied by third parties</li>
+				</ul>
+				<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />
+				<p>© Commonwealth of Australia (Geoscience Australia) 2018</p>
+			</div>
+		</div>
+  </div>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+<script type="text/javascript">
+	var S3BL_IGNORE_PATH = true;
+	// var BUCKET_NAME = 'dea-public-data';
+	var BUCKET_URL = 'https://deafrica-data.s3-us-west-2.amazonaws.com';
+	var BUCKET_WEBSITE_URL = 'https://data.digitalearth.africa'
+	// var S3B_ROOT_DIR = 'SUBDIR_L1/SUBDIR_L2/';
+	var S3B_SORT = 'A2Z';
+	var EXCLUDE_FILE = 'index.html';
+	var AUTO_TITLE = true;
+</script>
+<script type="text/javascript" src="website/js/s3-bucket-listing.js"></script>
+</html>
