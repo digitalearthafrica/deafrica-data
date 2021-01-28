@@ -297,6 +297,7 @@ if (typeof AUTO_TITLE != 'undefined' && AUTO_TITLE == true) {
     jQuery.each(files, function(idx, item) {
       // strip off the prefix
       item.keyText = item.Key.substring(prefix.length);
+      item.Key = encodeURIComponent(item.Key)
       if (item.Type === 'directory') {
         if (S3BL_IGNORE_PATH) {
           item.href = location.protocol + '//' + location.hostname +
@@ -307,11 +308,10 @@ if (typeof AUTO_TITLE != 'undefined' && AUTO_TITLE == true) {
       } else {
         // CloudFront can't handle files bigger than 20 GB, so there's a special case needed
         if (parseInt(item.Bytes) > 20000000000) {
-          item.href = BUCKET_URL + '/' + encodeURIComponent(item.Key);
+          item.href = BUCKET_URL + '/' + item.Key;
         } else {
-          item.href = BUCKET_WEBSITE_URL + '/' + encodeURIComponent(item.Key);
+          item.href = BUCKET_WEBSITE_URL + '/' + item.Key;
         }
-        item.href = item.href.replace(/%2F/g, '/');
         //Converts to local user time
         var options = {}
         options.timeZone = 'UTC';
@@ -319,6 +319,7 @@ if (typeof AUTO_TITLE != 'undefined' && AUTO_TITLE == true) {
         date = new Date(item.LastModified)
         item.LastModified = date.toLocaleString('en-GB', options)
       }
+      item.href = item.href.replace(/%2F/g, '/');
       var row = renderRow(item, cols);
       if (!EXCLUDE_FILE.includes(item.Key))
         content.push(row + '\n');
